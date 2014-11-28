@@ -1,4 +1,4 @@
-# ![BitCoin Logo]("http://bitcoin.org/img/opengraph.png") btcl
+# ![BitCoin Logo](http://bitcoin.org/img/opengraph.png) btcl
 Follow BitCoin exchange rates from your terminal.
 
 btcl is a command-line interface for retrieving BitCoin prices from your terminal instantly.
