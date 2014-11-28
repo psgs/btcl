@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name                  = "btcl"
-  s.version               = "0.0.1"
+  s.version               = "0.0.3"
   s.summary               = "A cli for retrieving prices from Bitcoin exchanges."
   s.description           = "Follow Bitcoin markets from your terminal. btcl is a Bitcoin Market Price Client that uses bitcoin markets api to retrieve real-time data."
   s.author                = "Jared Wright"

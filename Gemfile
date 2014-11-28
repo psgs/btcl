@@ -1,1 +1,1 @@
-gem "text-table"
+gem 'text-table'
