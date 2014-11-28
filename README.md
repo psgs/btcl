@@ -1,9 +1,8 @@
-# btcl
-Follow Bitcoin markets from your terminal.
+# <img src="http://bitcoin.org/img/opengraph.png" width="100" height="100"></img> btcl
+Follow BitCoin exchange rates from your terminal.
 
-<img src="http://bitcoin.org/img/opengraph.png" width="100" height="100"></img>
-
-btcl is a cli for retrieving Bitcoin prices from your command-line instantly. You can choose to get the top market or retrieve a single price quote with the exchange symbol from bitcoincharts.
+btcl is a command-line interface for retrieving BitCoin prices from your terminal instantly.
+You may choose to receive the top market exchange rate or retrieve a single price quote with the exchange symbol from bitcoincharts.
 
 ```
 $ btcl mtgoxUSD
@@ -41,7 +40,7 @@ Get more prices.
 $ btcl mtgoxUSD --verbose
 ```
 
-or 
+or
 
 ```
 $ btcl mtgoxUSD -v
@@ -53,7 +52,7 @@ If you would like to contact me for further information on the project, see the 
 
 Email: jawerty210@gmail.com
 
-Github: jawerty
+Github: @jawerty
 
 Twitter: @jawerty
 
