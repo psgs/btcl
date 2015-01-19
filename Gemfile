@@ -1,1 +1,3 @@
-gem 'text-table'
+source 'https://rubygems.org'
+
+gem 'tty', '~> 0.1.2'

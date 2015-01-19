@@ -3,7 +3,9 @@ require 'json'
 require 'net/http'
 require 'open-uri'
 require 'optparse'
-require 'text-table'
+require 'tty'
+
+table = TTY::Table.new
 
 # btcl pre-determines the top btc exchanges
 $top = {
@@ -18,11 +20,6 @@ $top = {
     'Canadian Virtual Exchange' => 'virtexCAD',
     'Mt.Gox UK' => 'mtgoxGBP'
 }
-
-table = Text::Table.new :horizontal_padding => 1,
-                        :vertical_boundary => '-',
-                        :horizontal_boundary => '|',
-                        :boundary_intersection => '-'
 
 def get_top(url)
   exchanges = []
@@ -102,13 +99,14 @@ case ARGV[0]
     end
 
     if info[0]
-      table.head = %w['Exchange', 'Price']
+      array = []
       info[1].each_with_index do |quote, i|
         message = '%s' % quote['ask']
         verbose_message = "high :: %s\t\tlow :: %s\nask :: %s\t\tbid :: %s\nclose :: %s\t\t\tavg :: %s" % [quote['high'], quote['low'], quote['ask'], quote['bid'], quote['close'], quote['avg']]
-        table.rows << [info[2][i], message]
+        array << [info[2][i], message]
       end
-      puts table.to_s
+      table = TTY::Table.new %w[Exchange price], array
+      puts table.render :ascii, multiline: true
     else
       puts info[1]
     end
@@ -117,9 +115,9 @@ case ARGV[0]
     if info[0]
       quote = info[1]
       message = '%s' % quote['ask']
-      table.rows = [['high', quote['high'].to_s], ['low', quote['low']], ['ask', quote['ask']], ['bid', quote['bid']], ['close', quote['close']], ['avg', quote['avg']]]
+      table = TTY::Table.new %w[Exchange price], [['high', quote['high'].to_s], ['low', quote['low']], ['ask', quote['ask']], ['bid', quote['bid']], ['close', quote['close']], ['avg', quote['avg']]]
       if options[:verbose]
-        puts table.to_s
+        puts table.render :ascii, multiline: true
       else
         puts message
       end

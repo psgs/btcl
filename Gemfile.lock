@@ -1,10 +1,24 @@
 GEM
+  remote: https://rubygems.org/
   specs:
-    text-table (1.2.3)
+    equatable (0.5.0)
+    necromancer (0.3.0)
+    pastel (0.4.0)
+      equatable (~> 0.5)
+    tty (0.1.2)
+      equatable (~> 0.5.0)
+      necromancer (~> 0.3.0)
+      pastel (~> 0.4.0)
+      tty-progressbar (~> 0.2.0)
+      tty-screen (~> 0.1.0)
+      tty-spinner (~> 0.1.0)
+    tty-progressbar (0.2.0)
+    tty-screen (0.1.0)
+    tty-spinner (0.1.0)
 
 PLATFORMS
   ruby
   x86-mingw32
 
 DEPENDENCIES
-  text-table
+  tty (~> 0.1.2)
