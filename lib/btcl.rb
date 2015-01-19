@@ -103,7 +103,14 @@ case ARGV[0]
       info[1].each_with_index do |quote, i|
         message = '%s' % quote['ask']
         verbose_message = "high :: %s\t\tlow :: %s\nask :: %s\t\tbid :: %s\nclose :: %s\t\t\tavg :: %s" % [quote['high'], quote['low'], quote['ask'], quote['bid'], quote['close'], quote['avg']]
-        array << [info[2][i], message]
+        if info[2][i].include? 'BitStamp'
+          pastel = Pastel.new
+          text = pastel.greeen(info[2][i])
+          value = pastel.green(message)
+          array << [text, value]
+        else
+          array << [info[2][i], message]
+        end
       end
       table = TTY::Table.new %w[Exchange price], array
       puts table.render :ascii, multiline: true

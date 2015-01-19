@@ -21,4 +21,5 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
+  pastel
   tty (~> 0.1.2)
