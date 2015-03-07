@@ -105,14 +105,14 @@ case ARGV[0]
         verbose_message = "high :: %s\t\tlow :: %s\nask :: %s\t\tbid :: %s\nclose :: %s\t\t\tavg :: %s" % [quote['high'], quote['low'], quote['ask'], quote['bid'], quote['close'], quote['avg']]
         if info[2][i].include? 'BitStamp'
           pastel = Pastel.new
-          text = pastel.greeen(info[2][i])
+          text = pastel.green(info[2][i])
           value = pastel.green(message)
           array << [text, value]
         else
           array << [info[2][i], message]
         end
       end
-      table = TTY::Table.new %w[Exchange price], array
+      table = TTY::Table.new %w[Exchange Price], array
       puts table.render :ascii, multiline: true
     else
       puts info[1]
@@ -122,7 +122,7 @@ case ARGV[0]
     if info[0]
       quote = info[1]
       message = '%s' % quote['ask']
-      table = TTY::Table.new %w[Exchange price], [['high', quote['high'].to_s], ['low', quote['low']], ['ask', quote['ask']], ['bid', quote['bid']], ['close', quote['close']], ['avg', quote['avg']]]
+      table = TTY::Table.new %w[Exchange Price], [['high', quote['high'].to_s], ['low', quote['low']], ['ask', quote['ask']], ['bid', quote['bid']], ['close', quote['close']], ['avg', quote['avg']]]
       if options[:verbose]
         puts table.render :ascii, multiline: true
       else
